@@ -1,0 +1,157 @@
+{
+    "name": "FlightInputActions",
+    "maps": [
+        {
+            "name": "Flight",
+            "id": "ebce5027-95d5-41ff-904f-b7c5b94e06c5",
+            "actions": [
+                {
+                    "name": "Turn",
+                    "type": "Value",
+                    "id": "b3d0d8f9-55b5-44a9-bb78-9b2cb3e12525",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Force",
+                    "type": "Button",
+                    "id": "6ddc1fcf-8cb8-483f-a18e-ab92ff0e87e2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7c770ae5-e135-4802-92f0-9b9135a638fe",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "e79fff32-faaa-4dbe-bccb-de518b073100",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "7eca6c55-2aad-4dc9-99e5-6d27a5a7eaa4",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "f16b7831-7ebf-4ea6-b778-27110f9eb585",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "8a23aa80-aaf4-4897-9e13-6ac3303341d7",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0793eada-1960-47b3-bca7-9210d90b3b8f",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "34ba1e15-119f-44c4-9332-7d8e4579c1cd",
+                    "path": "<XRController>/primary2DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VR",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2460f2d5-acd6-4006-aaa4-4f1496274eb9",
+                    "path": "*/{PrimaryTrigger}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VR",
+                    "action": "Force",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "776d35bc-97e6-4e6e-b23a-4d83f1e968c4",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Force",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard & Mouse",
+            "bindingGroup": "Keyboard & Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "VR",
+            "bindingGroup": "VR",
+            "devices": [
+                {
+                    "devicePath": "<XRHMD>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XRController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
