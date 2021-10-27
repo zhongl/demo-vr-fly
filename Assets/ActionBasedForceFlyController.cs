@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class ActionBasedForceFlyController : MonoBehaviour
 {
-  public float force = 2f;
+  public float sensitive = 4f;
+  public float force = 3f;
   public ForceMode mode = ForceMode.Force;
 
   Vector3 turn;
@@ -19,17 +20,17 @@ public class ActionBasedForceFlyController : MonoBehaviour
   // Update is called once per frame
   void FixedUpdate()
   {
-      rb.AddForce(transform.forward * forced * force, mode);
+    rb.AddForce(transform.forward * forced * force, mode);
   }
 
   void Update()
   {
-    transform.Rotate(turn * Time.deltaTime);
+    transform.Rotate(turn * sensitive * Time.deltaTime);
   }
 
   void OnForce(InputValue value)
   {
-      forced = value.Get<float>();
+    forced = value.Get<float>();
   }
 
   void OnTurn(InputValue value)
