@@ -15,7 +15,7 @@
                 },
                 {
                     "name": "Force",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "6ddc1fcf-8cb8-483f-a18e-ab92ff0e87e2",
                     "expectedControlType": "Button",
                     "processors": "",
