@@ -215,7 +215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245983395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.58, y: 13.13241, z: -10.439999}
+  m_LocalPosition: {x: 19.58, y: 13.13241, z: -28.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 884819449}
@@ -266,8 +266,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576765389107240e39cee3c95132544c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitive: 4
-  force: 8
+  sensitive: 10
+  force: 16
+  maxRotation: 45
   mode: 0
 --- !u!54 &245983400
 Rigidbody:
@@ -283,7 +284,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &574684087
 GameObject:

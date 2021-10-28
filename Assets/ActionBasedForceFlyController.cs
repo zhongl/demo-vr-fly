@@ -6,9 +6,10 @@ public class ActionBasedForceFlyController : MonoBehaviour
 {
   public float sensitive = 4f;
   public float force = 3f;
+  public float maxRotation = 15f;
   public ForceMode mode = ForceMode.Force;
 
-  Vector3 turn;
+  Vector2 turn;
   float forced;
   Rigidbody rb;
   // Start is called before the first frame update
@@ -25,7 +26,10 @@ public class ActionBasedForceFlyController : MonoBehaviour
 
   void Update()
   {
-    transform.Rotate(turn * sensitive * Time.deltaTime);
+    float x = turn.y * sensitive * Time.deltaTime; 
+    float y = turn.x * sensitive * Time.deltaTime; 
+    float z = Mathf.Clamp(-turn.x * sensitive * Time.deltaTime, -maxRotation, maxRotation); 
+    transform.Rotate(x, y, z);
   }
 
   void OnForce(InputValue value)
@@ -35,7 +39,6 @@ public class ActionBasedForceFlyController : MonoBehaviour
 
   void OnTurn(InputValue value)
   {
-    Vector2 tv = value.Get<Vector2>();
-    turn = new Vector3(tv.y, tv.x, 0f);
+    turn = value.Get<Vector2>();
   }
 }
