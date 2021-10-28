@@ -268,8 +268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitive: 10
   force: 16
-  maxRotation: 15
-  mode: 0
+  maxRotation: 10
+  mode: 1
 --- !u!54 &245983400
 Rigidbody:
   m_ObjectHideFlags: 0

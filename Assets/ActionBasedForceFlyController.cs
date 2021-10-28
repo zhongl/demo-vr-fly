@@ -7,7 +7,7 @@ public class ActionBasedForceFlyController : MonoBehaviour
   public float sensitive = 4f;
   public float force = 3f;
   public float maxRotation = 15f;
-  public ForceMode mode = ForceMode.Force;
+  public ForceMode mode = ForceMode.Impulse;
 
   Vector2 turn;
   float forced;
@@ -30,6 +30,7 @@ public class ActionBasedForceFlyController : MonoBehaviour
     float y = turn.x * sensitive * Time.deltaTime; 
     float z = Mathf.Clamp(-turn.x * sensitive * Time.deltaTime, -maxRotation, maxRotation); 
     transform.Rotate(x, y, z);
+    transform.Translate(Vector3.forward * Time.deltaTime);
   }
 
   void OnForce(InputValue value)
