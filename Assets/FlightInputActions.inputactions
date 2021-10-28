@@ -103,7 +103,7 @@
                 {
                     "name": "",
                     "id": "2460f2d5-acd6-4006-aaa4-4f1496274eb9",
-                    "path": "*/{PrimaryTrigger}",
+                    "path": "<XRController>/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "VR",
