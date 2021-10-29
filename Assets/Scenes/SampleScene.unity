@@ -263,13 +263,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 245983395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576765389107240e39cee3c95132544c, type: 3}
+  m_Script: {fileID: 11500000, guid: 96c29edc38f4f4ff9989eb3ba61291a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitive: 10
-  force: 16
-  maxRotation: 10
-  mode: 1
+  sensitive: 4
+  rotationRange: 15
 --- !u!54 &245983400
 Rigidbody:
   m_ObjectHideFlags: 0

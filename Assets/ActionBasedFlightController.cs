@@ -1,15 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody))]
-public class ActionBasedForceFlyController : MonoBehaviour
+public class ActionBasedFlightController : MonoBehaviour
 {
   public float sensitive = 4f;
-  public float force = 3f;
-  public float maxRotation = 15f;
-  public ForceMode mode = ForceMode.Impulse;
-
-  float forced;
+  public float rotationRange = 15f;
   Rigidbody rb;
 
   float yaw;
@@ -21,19 +16,13 @@ public class ActionBasedForceFlyController : MonoBehaviour
   {
     rb = GetComponent<Rigidbody>();
   }
-
-  // void FixedUpdate()
-  // {
-  //   rb.AddForce(transform.forward * forced * force, mode);
-  // }
-
   void Update()
   {
     transform.Rotate
     (
-      clamp(pitch, maxRotation),
-      clamp(yaw, maxRotation),
-      clamp(yaw + roll, maxRotation)
+      clamp(pitch, rotationRange),
+      clamp(yaw, rotationRange),
+      clamp(yaw + roll, rotationRange)
     );
     transform.Translate(Vector3.forward * Time.deltaTime);
   }
@@ -45,7 +34,7 @@ public class ActionBasedForceFlyController : MonoBehaviour
 
   void OnPower(InputValue value)
   {
-    forced = value.Get<float>();
+    Debug.Log(value.Get<float>());
   }
 
   void OnYaw(InputValue value)
