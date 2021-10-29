@@ -9,38 +9,55 @@ public class ActionBasedForceFlyController : MonoBehaviour
   public float maxRotation = 15f;
   public ForceMode mode = ForceMode.Impulse;
 
-  Vector2 turn;
   float forced;
   Rigidbody rb;
+
+  float yaw;
+  float pitch;
+  float roll;
+
   // Start is called before the first frame update
   void Start()
   {
     rb = GetComponent<Rigidbody>();
   }
 
-  // Update is called once per frame
-  void FixedUpdate()
-  {
-    rb.AddForce(transform.forward * forced * force, mode);
-  }
+  // void FixedUpdate()
+  // {
+  //   rb.AddForce(transform.forward * forced * force, mode);
+  // }
 
   void Update()
   {
-    transform.Rotate(turnOrReset(turn.y, 0), 0f, turnOrReset(-turn.x, 0));
-    // transform.Rotate(turnOrReset(turn.y, transform.rotation.x), 0f, turnOrReset(-turn.x, transform.rotation.z));
+    transform.Rotate
+    (
+      clamp(pitch, maxRotation),
+      clamp(yaw, maxRotation),
+      clamp(yaw + roll, maxRotation)
+    );
     transform.Translate(Vector3.forward * Time.deltaTime);
   }
 
-  private float turnOrReset(float l, float r) {
-    return l == 0 ? -r : Mathf.Clamp(l * sensitive * Time.deltaTime, -maxRotation, maxRotation);
+  private float clamp(float r, float max)
+  {
+    return Mathf.Clamp(r * sensitive * Time.deltaTime, -max, max);
   }
-  void OnForce(InputValue value)
+
+  void OnPower(InputValue value)
   {
     forced = value.Get<float>();
   }
 
-  void OnTurn(InputValue value)
+  void OnYaw(InputValue value)
   {
-    turn = value.Get<Vector2>();
+    yaw = value.Get<float>();
+  }
+  void OnRoll(InputValue value)
+  {
+    roll = value.Get<float>();
+  }
+  void OnPitch(InputValue value)
+  {
+    pitch = value.Get<float>();
   }
 }
