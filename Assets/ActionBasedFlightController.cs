@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ActionBasedFlightController : MonoBehaviour
 {
   public float sensitive = 4f;
   public float rotationRange = 15f;
   public float cruiser = 5f;
-  Rigidbody rb;
+  public GameObject model;
 
+  Rigidbody rb;
   float yaw;
   float pitch;
   float roll;
@@ -15,7 +17,11 @@ public class ActionBasedFlightController : MonoBehaviour
   float invert = 1;
   Vector3 initP;
   Quaternion initR;
+  float velocityX = 0.0f;
+  float velocityY = 0.0f;
+  float velocityZ = 0.0f;
 
+  float smoothTime = 1f;
 
   // Start is called before the first frame update
   void Start()
@@ -26,12 +32,24 @@ public class ActionBasedFlightController : MonoBehaviour
   }
   void Update()
   {
-    transform.Rotate
+    clampRotate(model.transform);
+    rotate(transform);
+  }
+
+  private void clampRotate(Transform t)
+  {
+    t.localEulerAngles = new Vector3
     (
-      clamp(pitch, rotationRange),
-      clamp(yaw, rotationRange),
-      clamp(yaw + roll, rotationRange)
+        Mathf.SmoothDampAngle(model.transform.localEulerAngles.x, pitch * rotationRange, ref velocityX, smoothTime),
+        Mathf.SmoothDampAngle(model.transform.localEulerAngles.y, yaw * rotationRange, ref velocityY, smoothTime),
+        Mathf.SmoothDampAngle(model.transform.localEulerAngles.z, roll * rotationRange, ref velocityZ, smoothTime)
     );
+  }
+
+  private void rotate(Transform t)
+  {
+    Vector3 euler = new Vector3(pitch, yaw, roll) * sensitive * Time.deltaTime * invert;
+    t.Rotate(euler);
   }
 
   void FixedUpdate()

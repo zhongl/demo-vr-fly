@@ -15,7 +15,7 @@
                 },
                 {
                     "name": "Yaw",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "0a1871f2-2d9b-4691-b968-25204b644044",
                     "expectedControlType": "",
                     "processors": "",
@@ -23,7 +23,7 @@
                 },
                 {
                     "name": "Pitch",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "2a7dad2f-bb22-4df2-88f8-9eaff3d9db96",
                     "expectedControlType": "",
                     "processors": "",
@@ -31,7 +31,7 @@
                 },
                 {
                     "name": "Roll",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "3df0baea-cce1-4605-a2e6-bdf7881f2ac6",
                     "expectedControlType": "",
                     "processors": "",
