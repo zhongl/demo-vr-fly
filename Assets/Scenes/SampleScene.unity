@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitive: 6
   rotationRange: 15
-  cruiser: 5
+  cruiser: 10
 --- !u!54 &245983400
 Rigidbody:
   m_ObjectHideFlags: 0
