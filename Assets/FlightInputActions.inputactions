@@ -36,6 +36,22 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "df922541-8b61-4dd8-a318-2b92fc3b6855",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Invert",
+                    "type": "Button",
+                    "id": "4fc88b99-9086-483a-8e11-564f38b8b1e3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -66,7 +82,7 @@
                     "id": "c7c4e7f1-1404-4616-9d36-f4bd676bc810",
                     "path": "<XRController>/deviceRotation/y",
                     "interactions": "",
-                    "processors": "Invert,Scale(factor=10)",
+                    "processors": "Scale(factor=10)",
                     "groups": "VR",
                     "action": "Yaw",
                     "isComposite": false,
@@ -110,7 +126,7 @@
                     "id": "05b9580f-8a0a-4c87-b54c-2fc13f060bf0",
                     "path": "<XRController>/deviceRotation/x",
                     "interactions": "",
-                    "processors": "Invert,Scale(factor=10)",
+                    "processors": "Scale(factor=10)",
                     "groups": "VR",
                     "action": "Pitch",
                     "isComposite": false,
@@ -154,7 +170,7 @@
                     "id": "7a2732b2-2c1e-43f8-8b5c-2287c5b24289",
                     "path": "<XRController>/deviceRotation/z",
                     "interactions": "",
-                    "processors": "Invert,Scale(factor=10)",
+                    "processors": "Scale(factor=10)",
                     "groups": "VR",
                     "action": "Roll",
                     "isComposite": false,
@@ -192,6 +208,50 @@
                     "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "3e11c7fc-6565-4678-b979-baeddbe0a910",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f1843ef9-cce9-4bcc-8421-9dcc42471c02",
+                    "path": "<XRController>/gripButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VR",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5660fb6c-5976-4a75-b90d-4f92e317a0a6",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Invert",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b334dad0-8344-4fea-b164-3af74a02620a",
+                    "path": "<XRController>/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VR",
+                    "action": "Invert",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

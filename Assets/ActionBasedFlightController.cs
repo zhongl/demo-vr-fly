@@ -12,11 +12,17 @@ public class ActionBasedFlightController : MonoBehaviour
   float pitch;
   float roll;
   bool accelerate;
+  float invert = 1;
+  Vector3 initP;
+  Quaternion initR;
+
 
   // Start is called before the first frame update
   void Start()
   {
     rb = GetComponent<Rigidbody>();
+    initP = transform.position;
+    initR = transform.rotation;
   }
   void Update()
   {
@@ -36,7 +42,7 @@ public class ActionBasedFlightController : MonoBehaviour
 
   private float clamp(float r, float max)
   {
-    return Mathf.Clamp(r * sensitive * Time.deltaTime, -max, max);
+    return Mathf.Clamp(invert * r * sensitive * Time.deltaTime, -max, max);
   }
 
   void OnAccelerate(InputValue value)
@@ -55,5 +61,16 @@ public class ActionBasedFlightController : MonoBehaviour
   void OnPitch(InputValue value)
   {
     pitch = value.Get<float>();
+  }
+
+  void OnReset()
+  {
+    transform.position = initP;
+    transform.rotation = initR;
+  }
+
+  void OnInvert()
+  {
+    invert = -invert;
   }
 }
