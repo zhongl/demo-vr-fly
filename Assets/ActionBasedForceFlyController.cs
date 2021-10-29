@@ -26,13 +26,14 @@ public class ActionBasedForceFlyController : MonoBehaviour
 
   void Update()
   {
-    float x = turn.y * sensitive * Time.deltaTime; 
-    float y = turn.x * sensitive * Time.deltaTime; 
-    float z = Mathf.Clamp(-turn.x * sensitive * Time.deltaTime, -maxRotation, maxRotation); 
-    transform.Rotate(x, y, z);
+    transform.Rotate(turnOrReset(turn.y, 0), 0f, turnOrReset(-turn.x, 0));
+    // transform.Rotate(turnOrReset(turn.y, transform.rotation.x), 0f, turnOrReset(-turn.x, transform.rotation.z));
     transform.Translate(Vector3.forward * Time.deltaTime);
   }
 
+  private float turnOrReset(float l, float r) {
+    return l == 0 ? -r : Mathf.Clamp(l * sensitive * Time.deltaTime, -maxRotation, maxRotation);
+  }
   void OnForce(InputValue value)
   {
     forced = value.Get<float>();
