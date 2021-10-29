@@ -40,9 +40,9 @@ public class ActionBasedFlightController : MonoBehaviour
   {
     t.localEulerAngles = new Vector3
     (
-        Mathf.SmoothDampAngle(model.transform.localEulerAngles.x, pitch * rotationRange, ref velocityX, smoothTime),
-        Mathf.SmoothDampAngle(model.transform.localEulerAngles.y, yaw * rotationRange, ref velocityY, smoothTime),
-        Mathf.SmoothDampAngle(model.transform.localEulerAngles.z, roll * rotationRange, ref velocityZ, smoothTime)
+        Mathf.SmoothDampAngle(model.transform.localEulerAngles.x, invert * pitch * rotationRange, ref velocityX, smoothTime),
+        Mathf.SmoothDampAngle(model.transform.localEulerAngles.y, invert * yaw * rotationRange, ref velocityY, smoothTime),
+        Mathf.SmoothDampAngle(model.transform.localEulerAngles.z, invert * roll * rotationRange, ref velocityZ, smoothTime)
     );
   }
 
