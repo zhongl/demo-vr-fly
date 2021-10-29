@@ -6,10 +6,10 @@
             "id": "ebce5027-95d5-41ff-904f-b7c5b94e06c5",
             "actions": [
                 {
-                    "name": "Power",
+                    "name": "Accelerate",
                     "type": "PassThrough",
                     "id": "6ddc1fcf-8cb8-483f-a18e-ab92ff0e87e2",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 },
@@ -46,7 +46,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "VR",
-                    "action": "Power",
+                    "action": "Accelerate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -57,7 +57,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Power",
+                    "action": "Accelerate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

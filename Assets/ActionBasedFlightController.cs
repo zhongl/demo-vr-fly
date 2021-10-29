@@ -5,11 +5,13 @@ public class ActionBasedFlightController : MonoBehaviour
 {
   public float sensitive = 4f;
   public float rotationRange = 15f;
+  public float cruiser = 5f;
   Rigidbody rb;
 
   float yaw;
   float pitch;
   float roll;
+  bool accelerate;
 
   // Start is called before the first frame update
   void Start()
@@ -24,7 +26,12 @@ public class ActionBasedFlightController : MonoBehaviour
       clamp(yaw, rotationRange),
       clamp(yaw + roll, rotationRange)
     );
-    transform.Translate(Vector3.forward * Time.deltaTime);
+  }
+
+  void FixedUpdate()
+  {
+    ForceMode mode = accelerate ? ForceMode.Acceleration : ForceMode.Force;
+    rb.AddForce(transform.forward * cruiser, mode);
   }
 
   private float clamp(float r, float max)
@@ -32,9 +39,9 @@ public class ActionBasedFlightController : MonoBehaviour
     return Mathf.Clamp(r * sensitive * Time.deltaTime, -max, max);
   }
 
-  void OnPower(InputValue value)
+  void OnAccelerate(InputValue value)
   {
-    Debug.Log(value.Get<float>());
+    accelerate = value.isPressed;
   }
 
   void OnYaw(InputValue value)
