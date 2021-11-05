@@ -23,6 +23,8 @@ public class ActionBasedFlightController : MonoBehaviour
 
   float smoothTime = 0.5f;
 
+  float moving = 0f;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -56,7 +58,7 @@ public class ActionBasedFlightController : MonoBehaviour
   void FixedUpdate()
   {
     ForceMode mode = accelerate ? ForceMode.Acceleration : ForceMode.Force;
-    rb.AddForce(transform.forward * cruiser, mode);
+    rb.AddForce(transform.forward * cruiser * moving, mode);
   }
 
   private float clamp(float r, float max)
@@ -91,5 +93,10 @@ public class ActionBasedFlightController : MonoBehaviour
   void OnInvert()
   {
     invert = -invert;
+  }
+
+  void OnMove()
+  {
+    moving = moving == 0 ? 1 : 0;
   }
 }

@@ -2326,7 +2326,7 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 1594406299}
   m_CameraGameObject: {fileID: 760976636}
   m_RequestedTrackingOriginMode: 1
-  m_CameraYOffset: 1.36144
+  m_CameraYOffset: 0.5
   m_TrackingSpace: 3
   m_TrackingOriginMode: -2147483648
 --- !u!4 &337751854
@@ -2357,7 +2357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c29edc38f4f4ff9989eb3ba61291a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitive: 4
+  sensitive: 10
   rotationRange: 15
   cruiser: 1
   model: {fileID: 422320671}
@@ -2369,7 +2369,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337751852}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 4
   m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -12955,18 +12955,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: edba2760f694e4b3095973e85c49225c,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5566
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: edba2760f694e4b3095973e85c49225c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5566
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: edba2760f694e4b3095973e85c49225c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5566
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: edba2760f694e4b3095973e85c49225c,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.0289965
+      value: -10.941
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: edba2760f694e4b3095973e85c49225c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.0194185
+      value: 3.1266
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: edba2760f694e4b3095973e85c49225c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.523499
+      value: 14.825
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: edba2760f694e4b3095973e85c49225c,
         type: 3}
