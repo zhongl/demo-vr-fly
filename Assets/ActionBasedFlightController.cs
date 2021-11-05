@@ -34,6 +34,7 @@ public class ActionBasedFlightController : MonoBehaviour
   {
     clampRotate(model.transform);
     rotate(transform);
+    var x = accelerate ? 2 : 1;
   }
 
   private void clampRotate(Transform t)
