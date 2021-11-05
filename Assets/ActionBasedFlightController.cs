@@ -21,7 +21,7 @@ public class ActionBasedFlightController : MonoBehaviour
   float velocityY = 0.0f;
   float velocityZ = 0.0f;
 
-  float smoothTime = 1f;
+  float smoothTime = 0.5f;
 
   // Start is called before the first frame update
   void Start()
